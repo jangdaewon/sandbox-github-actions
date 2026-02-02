@@ -1,0 +1,13 @@
+name: Trigger - schedule daily (KST midnight)
+
+on:
+  schedule:
+    # GitHub Actions schedules run in UTC. KST (UTC+9) midnight == 15:00 UTC (previous day).
+    - cron: "0 15 * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Hello from scheduled workflow (daily at KST midnight)"

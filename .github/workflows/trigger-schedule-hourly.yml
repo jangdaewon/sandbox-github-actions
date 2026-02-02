@@ -1,0 +1,12 @@
+name: Trigger - schedule hourly
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Hello from scheduled workflow"
