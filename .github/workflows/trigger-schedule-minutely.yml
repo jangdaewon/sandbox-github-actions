@@ -1,0 +1,13 @@
+name: Trigger - schedule minutely
+
+on:
+  schedule:
+    - cron: "* * * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Hello from scheduled workflow"
